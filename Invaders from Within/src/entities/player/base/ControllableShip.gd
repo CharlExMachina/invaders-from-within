@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 	_velocity = Vector3(x_axis_input, y_axis_input, 0.0) * movement_speed * delta
 
 func _physics_process(delta: float) -> void:
-	move_and_collide(_velocity)
+#	move_and_collide(_velocity)
+	translation += _velocity
 	var clamped_x_movement = clamp(translation.x, -movement_limits_unsigned.x, movement_limits_unsigned.x)
 	var clamped_y_movement = clamp(translation.y, -movement_limits_unsigned.y, movement_limits_unsigned.y)
 	translation = Vector3(clamped_x_movement, clamped_y_movement, 0.0)
