@@ -3,17 +3,14 @@ extends Spatial
 
 export var movement_speed := 30.0
 
-var direction := Vector3.ZERO setget movement_speed_set
-var target_pos: Vector3
-var motion = Vector3.ZERO
+var target_pos: Vector3 setget target_pos_set
+var dir := Vector3.ZERO
 
 func _process(delta: float) -> void:
-	var targetVector = (target_pos).normalized()
-	motion += targetVector
-	motion = motion * -movement_speed * delta
-	global_translate(motion)
+	global_translation += dir * movement_speed * delta
 
-func movement_speed_set(value: Vector3) -> void:
+
+func target_pos_set(value: Vector3) -> void:
 	look_at(value, Vector3.UP)
-	target_pos = target_pos - global_translation
-	direction = value
+	target_pos = value
+	dir = (target_pos - global_translation).normalized()

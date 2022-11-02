@@ -15,11 +15,9 @@ func _process(delta: float) -> void:
 		get_tree().root.add_child(bullet_cage_instance)
 		bullet_cage_instance.global_rotation = get_parent().global_rotation
 		bullet_cage_instance.global_translation = global_translation
-		var crosshair_translation = get_parent().get_node("Crosshair").global_translation
-#		var origin_translation = get_parent().get_node("BulletOrigin").global_translation
-#		var bullet_direction = crosshair_translation - origin_translation
-#		print(bullet_direction)
-		bullet_cage_instance.direction = Vector3(crosshair_translation.x, crosshair_translation.y, crosshair_translation.z - 3.0)
+		var crosshair_translation = get_parent().get_node("ControllableShip/SpringArm/CrosshairGuide").global_translation
+		bullet_cage_instance.target_pos = Vector3(crosshair_translation.x,
+				crosshair_translation.y, crosshair_translation.z)
 
 func _physics_process(delta: float) -> void:
 	translation += _velocity
