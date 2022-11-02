@@ -81,7 +81,7 @@ rail_movement_speed = 1.0
 [node name="SpringArm" type="SpringArm" parent="LevelRails/Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 1.90735e-06, -2.38419e-07 )
 shape = SubResource( 3 )
-spring_length = 6.886
+spring_length = 4.729
 
 [node name="Camera" type="Camera" parent="LevelRails/Player/SpringArm"]
 transform = Transform( 1, -1.11759e-08, -5.96046e-08, 0, 1, -2.98023e-07, 2.98023e-08, 7.45058e-09, 1, 0, 0, 0 )
