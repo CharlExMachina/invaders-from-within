@@ -1,20 +1,12 @@
-extends KinematicBody
+extends Sprite3D
 
 export var movement_speed := 30.0
 export var movement_limits_unsigned := Vector2(13.29, 7.175)
-
-var bullet_cage = preload("res://src/entities/ammo/bullet_cage/BulletCage.tscn")
 
 var _velocity := Vector3.ZERO
 
 func _process(delta: float) -> void:
 	_handle_movement()
-
-	if Input.is_action_just_pressed("shoot"):
-		var bullet_cage_instance = bullet_cage.instance()
-		get_tree().root.add_child(bullet_cage_instance)
-		bullet_cage_instance.global_rotation = get_parent().global_rotation
-		bullet_cage_instance.global_translation = global_translation
 
 func _physics_process(delta: float) -> void:
 	translation += _velocity
@@ -24,8 +16,8 @@ func _physics_process(delta: float) -> void:
 
 func _handle_movement() -> void:
 	var x_axis_input =\
-		 	Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		 	Input.get_action_strength("move_crosshair_right") - Input.get_action_strength("move_crosshair_left")
 	var y_axis_input =\
-			 Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
+			 Input.get_action_strength("move_crosshair_up") - Input.get_action_strength("move_crosshair_down")
 
 	_velocity = Vector3(x_axis_input, y_axis_input, 0.0) * movement_speed * get_process_delta_time()
