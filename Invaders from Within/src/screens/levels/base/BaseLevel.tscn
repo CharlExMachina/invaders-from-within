@@ -76,7 +76,6 @@ curve = ExtResource( 2 )
 
 [node name="Player" parent="LevelRails" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 1.81931, 6.81171, -3.95705 )
-rail_movement_speed = 1.0
 
 [node name="SpringArm" type="SpringArm" parent="LevelRails/Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 1.90735e-06, -2.38419e-07 )

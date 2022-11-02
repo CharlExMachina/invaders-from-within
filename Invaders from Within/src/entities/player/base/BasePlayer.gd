@@ -15,3 +15,6 @@ func _validate_path() -> bool:
 func _follow_path() -> void:
 	offset += rail_movement_speed * get_process_delta_time()
 
+func _on_ControllableShip_ready() -> void:
+	$ControllableShip.crosshair = $ControllableShip/SpringArm/CrosshairGuide
+	$ControllableShip.tween = $Tween

@@ -26,14 +26,12 @@ movement_limits_unsigned = Vector2( 30, 30 )
 transform = Transform( 0.0484226, 0, 0, 0, 0.0484226, 0, 0, 0, 0.0484226, 0, 0, -9.5556 )
 texture = ExtResource( 4 )
 
-[node name="CrosshairGuide2" type="Sprite3D" parent="ControllableShip/SpringArm/CrosshairGuide"]
-transform = Transform( 1.70122, 0, 0, 0, 1.70122, 0, 0, 0, 1.70122, 0, 0, 25 )
-texture = ExtResource( 6 )
-
-[node name="CrosshairGuide3" type="Sprite3D" parent="ControllableShip/SpringArm/CrosshairGuide"]
-transform = Transform( 3.33543, 0, 0, 0, 3.33543, 0, 0, 0, 3.33543, 0, 0, 50 )
+[node name="InnerCrosshairGuide" type="Sprite3D" parent="ControllableShip/SpringArm/CrosshairGuide"]
+transform = Transform( 3.33543, 0, 0, 0, 3.33543, 0, 0, 0, 3.33543, 0, 0, 40 )
 texture = ExtResource( 6 )
 
 [node name="Ufo" parent="ControllableShip" instance=ExtResource( 1 )]
 
 [node name="Tween" type="Tween" parent="."]
+
+[connection signal="ready" from="ControllableShip" to="." method="_on_ControllableShip_ready"]
