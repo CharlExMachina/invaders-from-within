@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "BulletCage",
+"language": "GDScript",
+"path": "res://src/entities/ammo/bullet_cage/BulletCage.gd"
+} ]
+_global_script_class_icons={
+"BulletCage": ""
+}
+
 [application]
 
 config/name="Invaders from Within"

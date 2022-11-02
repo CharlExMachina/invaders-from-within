@@ -11,13 +11,16 @@ loop = false
 script = ExtResource( 3 )
 
 [node name="Crosshair" type="Sprite3D" parent="."]
-transform = Transform( 0.130672, 0, 0, 0, 0.130672, 0, 0, 0, 0.130672, 0, 0, -11 )
+transform = Transform( 0.166505, 0, 0, 0, 0.166505, 0, 0, 0, 0.166505, 0, 0, -11 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
-movement_limits_unsigned = Vector2( 6.487, 3.71 )
+movement_speed = 45.0
+movement_limits_unsigned = Vector2( 15, 10 )
 
 [node name="ControllableShip" type="KinematicBody" parent="."]
 script = ExtResource( 2 )
 movement_limits_unsigned = Vector2( 6.487, 3.71 )
 
 [node name="Ufo" parent="ControllableShip" instance=ExtResource( 1 )]
+
+[node name="BulletOrigin" type="Position3D" parent="."]
